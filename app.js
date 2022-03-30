@@ -21,8 +21,8 @@ mongoose.connect(process.env.MONGO_URL, { useNewUrlParser: true, useUnifiedTopol
     )
     // .then(() => console.log('DB connection successful'))
 
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 app.engine("html", require("ejs").renderFile);
 app.use(express.static(__dirname + "/public"));
