@@ -1,7 +1,7 @@
 // Set up Passport for Local Sign In
-const passport = require("passport")
+const passport = require("passport");
 const LocalStrategy = require("passport-local").Strategy;
-const UserService = require('../user')
+const UserService = require('../user');
 const bcrypt = require('bcrypt');
 
 passport.use(new LocalStrategy(
@@ -14,7 +14,6 @@ passport.use(new LocalStrategy(
 
         if (currentUser.source != "local") {
             return done(null, false, { message: `You have previously signed up with a different signin method` });
-
         }
         console.log("currentuser", currentUser)
         if (!bcrypt.compareSync(password, currentUser.password)) {
