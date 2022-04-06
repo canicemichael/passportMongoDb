@@ -101,7 +101,7 @@ app.get("/local/signin", (req, res) => {
     res.render("local/signin.ejs");
 });
 
-app.post('/auth/local/signin', 
+app.post('/auth/local/signin',
     passport.authenticate('local', {
         successRedirect: '/profile',
         failureRedirect: '/local/signin',
